@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: lavender;
+  }
+  
+  h1 {
+    font-size: 54px;
+    font-weight: normal;
+    font-family: OpenSans, sans-serif;
+    letter-spacing: -1px;
+    text-align: center;
+    color: lavender;
+    justify-content: center;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .button {
+    border: none;
+    padding: .75em 1em;
+    color: lavender;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    border-radius: 2em;
+    animation: pulse 5s infinite;
+  }
+  
+  .button.spin {
+    animation-play-state: running !important;
+    animation: spin 3s infinite linear;
+  }
+
+  @keyframes pulse {
+    0% {
+      background-color: #FF0000;
+    }
+    25% {
+      background-color: #00FF00;
+    }
+    50% {
+      background-color: #0000FF;
+    }
+    75% {
+      background-color: #FFFF00;
+    }
+    100% {
+      background-color: #FF00FF;
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+      background-color: #FF0000;
+    }
+    25% {
+      transform: rotate(90deg);
+      background-color: #00FF00;
+    }
+    50% {
+      transform: rotate(180deg);
+      background-color: #0000FF;
+    }
+    75% {
+      transform: rotate(270deg);
+      background-color: #FFFF00;
+    }
+    100% {
+      transform: rotate(360deg);
+      background-color: #FF00FF;
+    }
+  }
