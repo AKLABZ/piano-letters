@@ -1,4 +1,7 @@
-/* style.css */
+:root {
+  --cursor-colors: #FF0000, #00FF00;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -6,6 +9,7 @@ body {
   align-items: center;
   height: 100vh;
   background-color: lavender;
+  cursor: none; /* Hide the default cursor */
 }
 
 h1 {
@@ -30,10 +34,10 @@ h1 {
   color: lavender;
   font-weight: bold;
   text-transform: uppercase;
-  cursor: pointer;
+  cursor: none;
   transition: all 0.2s ease-in-out;
   border-radius: 2em;
-  animation: pulse 5s infinite;
+  animation: pulse 7s infinite;
 }
 
 .button.spin {
@@ -42,11 +46,10 @@ h1 {
 }
 
 @keyframes pulse {
-  0% { background-color: #FF0000; }
+  0%, 100% { background-color: #FF0000; }
   25% { background-color: #00FF00; }
   50% { background-color: #0000FF; }
   75% { background-color: #FFFF00; }
-  100% { background-color: #FF00FF; }
 }
 
 @keyframes spin {
@@ -55,4 +58,92 @@ h1 {
   50% { transform: rotate(180deg); background-color: #0000FF; }
   75% { transform: rotate(270deg); background-color: #FFFF00; }
   100% { transform: rotate(360deg); background-color: #FF00FF; }
+}
+
+/* Add the custom cursor styles */
+.custom-cursor {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  animation: changeColor 1s infinite;
+  border-radius: 50%;
+  pointer-events: none; /* Prevent the custom cursor from capturing mouse events */
+  transform: translate(-50%, -50%); /* Center the cursor on the mouse pointer */
+  filter: blur(5px);/* Add blur effect */
+}
+
+@keyframes changeColor {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* New styles for the letter button */
+.main-page {
+  border: none;
+  margin-top: 1em;
+  padding: 2em 1em;
+  color: lavender;
+  font-weight: bold;
+  font-family: OpenSans, sans-serif;
+  text-decoration: none !important;
+  text-transform: uppercase;
+  cursor: none;
+  transition: all 0.2s ease-in-out;
+  border-radius: 3em;
+  animation: pulse 7s infinite;
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+.transition-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  background-color: var(--cursor-colors); /* Use the same cursor colors as the custom cursor */
+  transition: opacity 3s ease-in-out;
+}
+
+
+.expanded-cursor {
+  position: fixed;
+  top: 1000%;
+  left: 1000%;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(5px);
+  z-index: 9999;
+  animation: changeColor 1s infinite;
+  transform: translate(100%, 100%) scale(1); /* Initial scale: 1 */
+  transition: transform 0.8s ease-in-out; /* Smooth scaling transition */
+}
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: #f2f4f3;
+  
+}
+
+#3d-viewer {
+  width: 600px; 
+  height: 600px;
 }
