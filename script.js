@@ -222,7 +222,7 @@ function handleNewPage() {
     // Use the "transitionend" event to detect when the transition is completed
     transitionBg.addEventListener("transitionend", () => {
       // After the transition is complete, navigate to the new page
-      window.location.href = "mainpage.html";
+      window.location.href = "https://aklabz.github.io/NoErrors/";
     });
 
     // Update the opacity to make the transition background appear
