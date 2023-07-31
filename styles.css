@@ -1,0 +1,23 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    color: lavender;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #e6e6fa;
+    color: lavender;
+    
+}
+
+#3d-viewer {
+    width: 600px; 
+    height: 600px;
+    background-color: lavender;
+    color: lavender;
+}
